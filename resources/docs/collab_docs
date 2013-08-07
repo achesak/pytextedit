@@ -1,0 +1,30 @@
+About Collaborative Editing
+
+Collaborative editing allows multiple users to work on the same document at once.
+
+Collaborative Editing: Server
+
+A server must be configured and running before the feature can be used.
+
+To edit the configuration, open the pytextedit_server.py file in a text editor and look for the "CONFIGURATION" label. There are a few variables that can be changed:
+
+* conf_port - Specifies the port that the server will listen on. Note that if this is changed the client configuration must be changed as well.
+* conf_host - Specifies the host name of the server. Set to the empty string ("") to use localhost.
+* conf_file - Specifies the file that the text will be saved to and read from. Make sure this file exists before starting the server, as read requests will not work otherwise.
+* conf_write - Specifies whether writing to the file is allowed.
+* conf_read - Specifies whether reading from the file is allowed.
+* conf_restrict - Specifies whether the server fill use a whitelist, a blacklist, or if it should allow everyone. Set to 1 for no restrictions, 2 for a whitelist, and 3 for a blacklist.
+* conf_whitelist - Specifies the whitelist, if used. This should be a list of IP addresses, each in their own string.
+* conf_blacklist - Specifies the blacklist, if used. This should be a list of IP addresses, each in their own string.
+
+To start the server, run the command:
+
+python pytextedit_server.py
+
+The server can be started in the background, but it is not recommended as it outputs messages that could be useful.
+
+Collaborative Editing: Client
+
+After the server is running the file can be edited. Go to the "Tools" menu and choose "Collaborative Editing...". The server and port are pre-filled, but can be changed as needed. The pre-filled values can also be changed, from the "Network" tab in the "Options" dialog. Click the "Connect" button to start editing.
+
+A window will then appear with three buttons. Click the "Push" button to send the text to the server, and "Pull" to get the server's stored text. Click "Close" when editing is complete.

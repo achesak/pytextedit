@@ -1,0 +1,137 @@
+About Configuration
+
+The configuration in pytextedit, available from "Options -> Options" or by pressing F3, allows the user to change the interface and behavior of the program.
+
+Font Options
+
+* Name - Specifies the name of the font to use in the main text box.
+* Size - Specifies the size of the font to use in the main text box. This must be a positive integer.
+* Style - Specifies the style of the font to use in the main text box. 
+* Foreground - Specifies the foreground (text) color to use in the main text box.
+* Background - Specifies the background color to use in the main text box.
+* Sel. Foreground - Specifies the foreground (text) color to use when text is selected in the main text box.
+* Sel. Background - Specifies the background color to use when text is selected in the main text box.
+* Text Wrap - Specifies the text wrap to use in the main text box. Text can wrap on the last character (char), on the last word (word), or not at all (none).
+
+Interface Options
+
+* UI Foreground - Specifies the foreground (text) color to use in the interface. Note that this is different from the Foreground option in the Font tab.
+* UI Background - Specifies the background color to use in the interface. Note that this is different from the Background option in the Font tab.
+* Toolbar - Specifies whether the toolbar should be displayed.
+* Toolbar Buttons - Specifies whether the buttons on the toolbar should use text, images, or both.
+* Toolbar Images - Specifies where in relation to the text the images on the toolbar buttons should be shown. This is only relevant if the Toolbar Buttons option is set to both.
+* Toolbar Image Size - Specifies whether the images on the toolbar buttons should be large or small.
+* Line Numbers - Specifies whether the line number should be displayed.
+* Status Bar - Specifies whether the status bar should be displayed.
+* Command Bar - Specifies whether the command bar should be displayed.
+* Documents List - Specifies whether the documents list should be displayed.
+* Documents List Width - Specifies the width (in characters) of the documents list.
+* Title - Specifies whether the title should display the just the filename or the full path and filename.
+* Highlight Line - Specifies whether the current line will be highlighted.
+* Highlight Line Color - Specifies the color used for highlighting the current line.
+
+Editing Options
+
+* Auto-Indent - Specifies whether the next line will be automatically indented based on the indentation of the previous line.
+* Replace Tabs - Specifies whether tab characters will be automatically replaced with spaces.
+* Indent Amount - Specifies the indent amount. This must be a positive integer.
+* Spaces Per Tab - Specifies how many spaces are in a tab, for when automatically replacing tabs. This must be a positive integer.
+* Reverse Separator - Specifies the separator used when reversing lines.
+* Join Separator - Specifies the separator used when joining lines.
+* "Smart" Home - Specifies whether "smart" home will be enabled. When enabled pressing the Home key will move to the first position after any indentation.
+* "Smart" End - Specifies whether "smart" end will be enabled. When enabled pressing the End key will move to the last position before any indentation.
+* Auto-Strip - Specifies whether extra whitespace at the end of a line will be automatically removed.
+* Duplicate Line - Specifies whether duplicated lines will be positioned above or below the current line.
+* Prepend To Line - Specifies a string to automatically prepend to the start of a line.
+* Append To Line - Specifies a string to automatically append to the end of a line.
+* Auto-Wrap - Specifies whether automatic line wrapping will be enabled.
+* Auto-Wrap Length - Specifies the length of lines necessary for them to automatically wrap.
+
+Searching Options
+
+* Case Sensitivity - Specifies whether searches are case sensitive by default.
+* Regex Search - Specifies whether searches use regular expressions by default.
+* Cursor Position - Specifies whether the cursor will be positioned at the start or end of a string that has been found.
+* Keep Dialog Open - Specifies whether the dialog will be kept open after a search by default.
+* Negative Lines in Goto - Specifies how negative lines in Goto will be treated. It can go that many lines from the end, from the beginning, or simply ignore negative values.
+* Advanced Search Commands - Specifies whether more advanced commands in the Search menu will be shown.
+* Remember Find History - Specifies whether Find will remember the history.
+* Remember Replace History - Specifies whether Replace will remember the history.
+* Search History Order - Specifies whether the Find and Replace history will be shown oldest first or last.
+
+Network Options
+
+* Email Server - Specifies the default email server.
+* Email Sender - Specifies the default email sender.
+* Email Recipient - Specifies the default email recipient.
+* FTP Server - Specifies the default FTP server.
+* Collab. Editing Server - Specifies the default collaborative editing server.
+* Collab. Editing Port - Specifies the default collaborative editing port.
+
+File Browser Options
+
+* Title - Specifies whether the title will display the current directory or simply "File Browser".
+* Toolbar - Specifies whether the toolbar will be displayed.
+* Toolbar Buttons - Specifies whether the buttons on the toolbar should use text, images, or both.
+* Toolbar Images - Specifies where in relation to the text the images on the toolbar buttons should be shown. This is only relevant if the Toolbar Buttons option is set to both.
+* Menu Bar - Specifies whether the menu bar will be displayed.
+* File Menu - Specifies whether the File menu will be displayed.
+* Folders Menu - Specifies whether the Folders menu will be displayed.
+* Context Menu - Specifies whether the context menu will be displayed.
+* Sort Alphabetically - Specifies whether the files and folders should be sorted alphabetically.
+* Folder Position - Specifies whether the folders should be displayed above or below the files.
+
+Menu Options
+
+* Menu Bar - Specifies whether the menu bar will be shown.
+* Tear-off Menus - Specifies whether tear-off menus will be enabled. If enabled, menus can be "torn" off from the main application and become separate windows.
+* Menu Icons - Specifies whether icons will be shown in the menus.
+* File Menu  - Specifies whether the File menu will be displayed.
+* Edit Menu  - Specifies whether the Edit menu will be displayed.
+* Documents Menu  - Specifies whether the Documents menu will be displayed.
+* Search Menu  - Specifies whether the Search menu will be displayed.
+* Tools Menu  - Specifies whether the Tools menu will be displayed.
+* Code Menu  - Specifies whether the Code menu will be displayed.
+* Options Menu  - Specifies whether the Options menu will be displayed.
+* Help Menu  - Specifies whether the Help menu will be displayed.
+* Context Menu  - Specifies whether the context menu will be displayed.
+
+Macro Options
+
+* Command Bar - Specifies whether the command bar will run macro commands or Python statements.
+* Run Command - Specifies whether Run Command will run macro commands or Python statements.
+* Error on Unknown Commands - Specifies whether unknown commands will cause errors or fail silently.
+* Stop on Error - Specifies whether execution of a macro will stop when an error occurs.
+* Allow Python Statements - Specifies whether Python statements are allowed in a macro.
+* Allow Variables - Specifies whether variables are allowed in a macro.
+* Comment Start - Specifies the string used to start a comment. It is not recommended to change this.
+* Variable Start - Specifies the string used to start a variable. It is not recommended to change this. Note that this must be a single character.
+* Python Statement Start - Specifies the string used to start a Python statement. It is not recommended to change this.
+
+Code Options
+
+* Python Interpreter - Specifies the command used for running Python code.
+* Perl Interpreter - Specifies the command used for running Perl code.
+* PHP Interpreter - Specifies the command used for running PHP code.
+* C Compiler - Specifies the command used for compiling C code.
+* C++ Compiler - Specifies the command used for compiling C++ code.
+* Java Compiler - Specifies the command used for compiling Java code.
+* Prompt for Arguments - Specifies whether the user will be prompted for command line arguments when running or compiling code.
+* Block Indenting - Specifies whether automatic block indenting will be enabled for C code, Python code, or if it will be disabled.
+* Comment Continuation - Specifies whether comments will be automatically continued for Python-style comments, for C++-style comments, or if it will be disabled.
+
+Misc Options
+
+* Initial Directory - Specifies the initial directory used when displaying the open and save dialogs. Set to "$HOME" for it to be automatically set to your home directory after a restart.
+* Default Encoding - Specifies the default encoding. Set to "DEFAULT" for it to be automatically replaced with the system default.
+* Prompt For Encoding - Specifies whether the user will be prompted for the encoding before the default encodings are tried.
+* Date Format - Specifies the format used when inserting dates.
+* Time Format - Specifies the format used when inserting times.
+* Restore Last Open - Specifies whether the file will be automatically reopened next session.
+* Save Window Geometry - Specifies whether the window size and position on exit will be saved and restored next session.
+* Save Cursor Mode - Specifies whether the cursor mode on exit will be saved and restored next session.
+* Confirm on Exit - Specifies whether a confirmation dialog will be shown on exit if there are unsaved changes.
+* Font Size Change - Specifies how much the font size should be changed when enlarging or shrinking.
+* Fast Scroll Lines - Specifies how many lines fast scrolling should scroll by.
+* Page Scroll Lines - Specifies how many lines PageUp and PageDown will be scrolled by.
+* Copy/Cut Line - Specifies whether the current line will be copied or cut if nothing is selected.

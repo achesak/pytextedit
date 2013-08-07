@@ -1,0 +1,650 @@
+CHANGELOG
+
+----
+
+0.1alpha1 -> 0.1alpha2
+
+* Redesigned the settings interface. They now show in their own windows.
+* Inverted color defaults for the file label.
+* Changed file label to have normal relief.
+* Fixed Unicode testing. Now explicitly tests for None. Otherwise successfully opening an empty file would test as False, and it would register as a failure. Oops.
+* Added "Tools -> Indent All" and "Tools -> Unindent All".
+* Fixed a bug that resulted in selected text not being deleting when the enter key is pressed.
+* Added more commands to "Search -> Search Selected": DuckDuckGo, Yahoo, Bing, Wikipedia, Youtube, Wolfram|Alpha, About.com, Is.gd Shorten, and Is.gd Lookup.
+* Added "Tools -> Insert" submenu, with commands to insert line number, character position, filename, directory, and full path.
+* Now runs on both python2 and python3, albeit with some features disabled in python2.
+* Added an internal file browser.
+* Made "Open from URL" work with python2.
+
+----
+
+0.1alpha2 -> 0.1alpha3
+
+* Simplified the code for opening files. Now all functions use file_open() instead of repeating the code.
+* Made a click on the file label trigger file_open(), and a right-click trigger file_save().
+* Fixed the bug where clicking on "Cancel" in the Open and Save(As) dialogs would result in an error.
+* Fixed the bug where clicking on "Cancel" in the Open From URL dialog would result in an error.
+* Added code to check when "Cancel" is pressed or the empty string is entered in dialog, and "return" if one of those conditions is true.
+* Added improved "Exit" dialog with "Save" option.
+* Removed the "auto-replace" feature. It was useless anyway.
+* Changed "Open From URL" so that it doesn't remember the file name (this caused problems with saving later).
+
+----
+
+0.1alpha3 -> 0.1alpha4
+
+* Commented entire code!
+* Removed old file_exit() function. (It was still there, as file_exit_old().)
+* Revised new file_exit() to quit without confirmation if file was saved.
+* Added option to hide file label.
+* Moved "Run Code (...)" commands into a new submenu, "Code -> Run Code."
+* Added submenu "Code -> Compile" with options to compile C and C++ code. Also added corrosponding options in config file.
+* Tweaked keyboard shortcuts a little.
+* Added a "Delete" command to "File" menu.
+* Added a "Rename" command to "File" menu.
+* Modified some window titles to be more consistent.
+* Added button to "Recently Opened" dialog to clear list.
+* Fixed a bug in "Rename" where it didn't stop the function while not having a file open.
+* Changed "Copy" to work while file is locked (why shouldn't it?).
+* Cut some unneccesary code from edit_line_cut().
+* Modified "Select All" to keep cursor at current position, instead of moving it to top.
+* Removed some useless lines from the "Replace" functions.
+* Removed some useless lines from lots of functions.
+* Added improved "Font" options dialog, with entries for font name, font size, font style, foreground, and background.
+* Removed "Colors..." command in "Options" menu, as it is useless now. (See above.)
+* Added improved "Insert Tag" dialog.
+* Updated and improved the "About" dialog.
+* Commented the code to build the menus a little better.
+* Changed the buttons in the "Exit" dialog to have a little padding.
+* Removed the file browser. (At least for now. I might add it back it if I improve it a little.)
+* Changed the title in the dialog used by "Rename" to say "Rename".
+* Fixed bug where clicking "Cancel" in the "Rename" dialog would result in an error.
+* Removed "Edit -> Lock File" submenu, and replaced it with a checkbutton.
+* Fixed the problem (I wouldn't even call it a bug) where changing the file to read/write mode would add an unnecessary "-" to the title when no file was open.
+* Changed "style" entry in the "Font" options dialog to an OptionMenu, to limit the choices.
+* Further improved the "Font" options dialog by merging the "Wrap" options dialog with it.
+* Added (yet another) new "Exit" dialog, this time using the tkinter Dialog from tkinter.dialog.
+* Switched positions of "Copy" and "Cut" in the "Edit" menu.
+* Removed the file label.
+* Added toolbar.
+* Added an option in the config file to show/hide toolbar.
+* Fixed bug where clicking "Cancel" in the askcolor() dialogs for the "Font" options dialog would result in an error.
+* Added line numbers.
+* Updated "Options -> View Options".
+* Removed "Case Sensitivity" command from "Options".
+* Added new "Replace" dialog, merging "Replace", "Replace All", and all the others into one dialog. 
+* Removed unnecessary menu items from "Search". (See above.)
+* Removed config file option to change default title.
+* Fixed bug where trying to paste when nothing is in the clipboard results in an error.
+* "Ctrl+1" now increases font size by one, and "Ctrl+2" now decreases font size by one.
+* Removed "last action" label from status bar.
+* Disabled spellchecker by default.
+* Added "File -> Insert" command to insert text from another file into the current one.
+* Fixed a few inconsistencies with the menus.
+* Added "Tools -> Bookmarks" submenu.
+* Added a "Context Menu -> Bookmarks" submenu.
+* Fixed bug where trying to open a file while current file was locked wouldn't work.
+* Added improved "Find" dialog, with case insensitive checkbox.
+* Added "Search -> Find Selected..." and "Search -> Find in Selected..." commands.
+* Removed "Search -> Find Again" command.
+* Modified keyboard shortcuts for "Search" menu.
+* Removed the status bar, due to problems with the labels and general uselessness.
+* Merged "Selected Statistics" and "Insert Position" into "Statistics".
+* Added a keybinding for opt_font().
+* Modified keybindings for "Jump to Top/Bottom/Insert".
+
+----
+
+0.1alpha4 -> 0.1
+
+* Added .json to the filetypes list for JavaScript.
+* Removed "Options -> View Options".
+* The background color of the toolbar is now set to ED_LN_BG as well.
+* Removed spellchecker.
+* Removed ED_CMD_INIT_DIR. Now ED_INIT_DIR is used for the command line as well.
+* opt_font_size() will now refuse to change the font size if it would be less than 1.
+* Added an option for .java files in the filetypes list.
+* Added a command in "Code -> Compile" for compiling Java files.
+* ED_INIT_DIR will now be set to "C:" for the HOME dircetory on Windows.
+* Created a new directory called "resources" for storing anything the application needs.
+* Moved "images" directory into "resources".
+* Added a keybinding for F5 to file_reload().
+* Added "File -> Quick Open".
+* There is now a LICENSE file.
+* There is now a README file.
+* Added "Code -> Remove Tags".
+* Clicking on "Cancel" when saving a file when exiting will now not close the application anyway.
+* Line numbers can now be hidden.
+* Added improved "About" dialog.
+* Code menu can no longer be disabled.
+* Context menu can no longer be disabled.
+* Modified a few menu items in "File".
+* Added "File -> Favorites" and "Options -> Edit Favorites".
+* "Recently Opened" now saves across sessions.
+* Added key binding for "Favorites".
+* Default font name is now "courier".
+* Fixed how line numbers wouldn't match up with text.
+* Changing the font name/size will change the font in the line numbers as well.
+* file_open() now closes files after it is done reading. 
+* Window size and position is now saved across sessions.
+* Removed ED_WIN_SIZE.
+* Added a CSS entry in the filetypes list.
+* Removed all references to ED_TITLE, and removed that variable.
+* Renamed Textbox_LN to TextboxLN.
+* Added function internal_return_focus() for simplifying returning the focus to the text box.
+* Fixed bug where pressing Tab wouldn't change gbl_text_modified.
+* Removed "import glob". It wasn't used by anything.
+* Removed gbl_browse_dlg and gbl_fullscreen. I honestly have no idea what they were for, as they weren't used by anything.
+* Fixed bug where you couldn't open a new file if current file was locked.
+* Removed "Search -> Move Insert To...".
+* Removed tools_insert_pos() function, it wasn't used anymore.
+* Simplified lots of the code. (Mostly removing unnecessary try-except blocks.)
+* Made some except blocks handle specific errors, rather then catching all.
+* Simplified the GUI code. There was an unnecessary frame.
+* Simplified edit_lock().
+* Removed "Edit -> Selection -> Move Selection".
+* Merged file_save_as() into file_save().
+* When getting all text, the indexes "1.0" and "end-1c" are now always used. Before it was very inconsistent.
+* Same as above, but for deleting all text.
+* Fixed bug where "Revert to Last Save" would scroll to the bottom.
+* Fixed bug where "Revert to Last Save" would not mark the text as having no changes.
+* "Revert to Last Save" now clears the undo/redo stack.
+* Improved some of the code for loading a file from the command line. I had forgotten to update it as I did the other stuff. (Oops.)
+* Further improved comments.
+* Changed the default gbl_dlg_open_url to "http://".
+* gbl_saved_data is now updated when the file is opened as well.
+* UI options now apply to scrollbars as well.
+* Rewrote check_modified().
+* Added function internal_text_modified() function for simplifying marking text as having changes.
+* Rewrote all functions to use internal_text_modified().
+* Simplified the code for opening from command line.
+* Rewrote file_exit() to use a Toplevel (again).
+* Removed "Font" toolbar button.
+* Added "Options" toolbar button.
+* Added the options dialog.
+* Removed "Options -> Font" and corrosponding function.
+* Fixed bug where "Indent All" and "Unindent All" would not work for the last line.
+* Simplified TextboxLN.
+
+----
+
+0.1 -> 0.1a
+
+* Opening/saving now works with Python 2. Running it in Python 2 removes all Unicode support, however.
+* Fixed bug where "Statistics" wouldn't work if no text was selected.
+* Fixed bug where "Statistics" would report there being one less line than there actually was.
+* Line numbers now match up to the text. (Better than before, anyway. Still not perfect.)
+
+----
+
+0.1a -> 0.2
+
+* Font size can now no longer be zero or negative.
+* Right-clicking on toolbar buttons now show dialogs with a short description of what the button does.
+* Middle-clicking now pastes text.
+* Fixed bug in "Goto" where clicking Cancel in the dialog would see() the line with the cursor. (This was a problem if the user had scrolled.)
+* "Goto" now uses the current line number as the default value.
+* "Select From" now uses the current cursor position as the default value.
+* Removed some unnecessary global variables.
+* askdirectory() is now imported in Python 2 as well. I have no idea why it wasn't before.
+* askopenfilename() is now imported. It was used by "Edit Favorites", but it wasn't imported. Oops.
+* "Edit Favorites" now uses ED_INIT_DIR to set the default directory.
+* "Edit Favorites" now uses the custom filetypes list.
+* Changed keybinding for "Favorites" to Ctrl+Alt+[Space].
+* "Recently Opened" can now be used easily without a mouse. (Added "Return" keybinding, and focus()ed on the listbox.)
+* "Favorites" can now be used easily without a mouse. (Added "Return" keybinding, and focus()ed on the listbox.)
+* "View Bookmarks" can now be used easily without a mouse. (Added "Return" keybinding, and focus()ed on the listbox.)
+* Default value for "Quick Open" is now ED_INIT_DIR.
+* Removed "Indent All" and "Unindent All".
+* "Indent" and "Unindent" will now indent any selected text.
+* Added keybinding for "Add Bookmark." (Ctrl+B)
+* Added "Documents" menu.
+* Added "Previous" and "Next" toolbar buttons.
+* Re-organized toolbar.
+* Bookmarks now cannot be added multiple times on the same line.
+* Added "Search -> Open URL in Web Browser".
+* Added "Options -> Enlarge Font" and "Options -> Shrink Font".
+* Enabling/disabling tearoff menus in Options dialog no longer requires a restart.
+* Fixed bug where tearoff menu optionmenu in Options dialog would not default to disabled.
+* Bookmarks are now sorted numerically.
+* Added keybinding for "View Bookmarks".
+* Removed menu tearoff for bookmarks submenu in context menu.
+* Revised "About" dialog.
+* Fixed bug where "Goto" would accept a line greater than the total number of lines.
+* Bookmarks will now no longer be shown if the line number is greater than the total number of lines.
+* In "Statistics" dialog added "Chars (excluding spaces)" and "Sel chars (excluding spaces)".
+* "Statistics" dialog will now only show info on selected text if there is text selected.
+* Added feature to add extra indenting based on last character of the line.
+* Added a Cancel button to the "Options" dialog.
+* "Insert Date/Time" now use standard formatting.
+* "Undo" and "Redo" will no longer cause errors if there is nothing to do.
+* Moved time/date formatting options into "Misc" tab in "Options" dialog.
+* Added block indenting option to "Editing" tab in "Options" dialog.
+* Loading a file from the command line will now set the insert cursor to the first position by default. (Before it would be set to the last postion.)
+* Simplified save function in Exit dialog.
+* The last open file is now remembered on exit, and restored next session.
+* check_modified() now will do nothing if the text is already marked as modified.
+* Added exportselection option to textboxes.
+* Added option in Misc tab of Option dialog for enabling/disabling automatic restoring of the last opened file.
+* "Clear Bookmarks" will now let you know if there are no bookmarks, and if so do nothing.
+* In the confirmation dialog "Clear Bookmarks" will now say how many bookmarks there are.
+* Added status bar.
+* Added option to Interface tab in Options dialog for showing/hiding the status bar.
+* Added option to Interface tab in Options dialog for using the full or short filename in the title.
+* "Open From URL" now forgets the last filename.
+* All functions now use update_title(), instead of calling root.title() directly.
+* "Search", "Replace", and "Insert Tag" now focus on the first entry by default.
+* Added a new icon for the Save toolbar button.
+* Added option to Misc tab in Options dialog for enabling/disabling regex search.
+* Added regex search.
+* Added regex replace.
+* Added icons in menus.
+* Fixed bug where text box would scroll to cursor every time any menu command was selected.
+* Clicking on statistics labels in status bar now shows the statistics dialog.
+* Fixed bug where clearing the "Recently Opened" list would result in an extra blank newline.
+* "Save As" will now add file to list of recently opened files.
+* "Recently Opened" files now display in a menu.
+* Added code in file_open() to check if the file exists, and if it doesn't to not do anything.
+* Fixed bug where pressing the Enter key wouldn't scroll to the new location, if it was otherwise out of view. (This bug only appeared in python2, for some reason.)
+* Added MDI.
+* Added "File -> Print".
+
+----
+
+0.2 -> 0.2.1
+
+* Added "File -> Save Copy...".
+* Added "Edit -> Clear Clipboard".
+* When opening a file from the command line it now explicitly checks which version of python it's running in, and if running in python 2 it will not attempt to open with Unicode. (Before it would fail on the first three attempts, then succeed in binary mode.)
+* Improved error messages. The dialog now has the title set to the name of the command that was run. In some places the errors were made more descriptive. Also, the exclamation marks were removed.
+* In open/save functions, instead of using try-except blocks to check for everything, there is now one except block for Unicode errors (which will fail silently), and one except block for IOErrors (which will show an error message then exit the function). Also, the try-except block that surrounded almost everything in those functions is now gone, as there was absolutely no point to it.
+* Simplified try-except blocks in a lot of functions.
+* Fixed/improved/simplified a lot of little stuff. (Removing unnecessary global declarations, making things slightly more useful, etc.)
+* Clicking "Cancel" in the dialog that appears if you click on a blank area of the "Favorites" dialog will no longer close the dialog.
+
+----
+
+0.2.1 -> 0.2.2
+
+* Fixed opening a file in python 2 not catching IOError exceptions.
+* Fixed incorrect use of print() function.
+* Improved comments a bit.
+* Added "Bookmarks -> Save Bookmarks...".
+* Added "Bookmarks -> Open Bookmarks...".
+* Added code to check that the configuration files exist before loading them, and give an error message and exit if any are not there.
+* Added error checking for loading configuration files. It will now catch any IOError or TypeError exceptions for each file.
+* Added keybinding for "Tools -> Insert Time".
+* Added keybinding for "Tools -> Insert Date".
+* Added "return 0" to the end of main() in the Linux binary, I have no idea how I forgot this.
+* Added icon and .desktop file to Linux installer.
+
+----
+
+0.2.2 -> 0.3
+
+* opt_font_size() now automatically returns focus to the text box. (This could cause slight annoyances if this option was chosen from the menu.)
+* Added "Options -> Revert to Default...".
+* "Bookmarks -> Save Bookmarks..." now shows the correct message if there are no bookmarks. (Previously it said that there were no bookmarks to clear. Yay for copy-paste.)
+* "Bookmarks -> Open Bookmarks..." now switches back to the original directory after globbing the files, and then switches if needed for opening. Previously this would cause problems if no file was opened, as the directory wouldn't be restored.
+* MDI-related functions now update the title and status bar correctly. Previously the filename/encoding status label would not be updated, the title was set inconsistently, and the statistics labels would only sometimes be updated.
+* Added "Tools -> Notes...".
+* Fixed bug where clicking "Cancel" in "Documents -> Open..." would open a blank document.
+* Added folder "docs" for documentation.
+* Added documentation file "docs/macro_docs".
+* Fixed bug where "Search -> Replace..." would auto-insert an incorrect string into the second entry.
+* If text is selected, "Tools -> Statistics..." will now show the starting and ending positions.
+* Added "Tools -> Insert Time (Words)".
+* Moved the code for getting the last opened file into the setup section.
+* Added error checking for loading the program's files during setup.
+* "File -> Favorites", "Documents -> View", and "Tools -> Macros -> Run" will now do nothing if the listbox was clicked on a blank item. Before this could cause some really odd behavior.
+* Changed a few menu items slightly.
+* Renamed "Code -> Escape Selected" to "Code -> Escape".
+* Updated help_about() to make it follow the same conventions as the rest of the code.
+* Added "Help -> Help..."
+* Added macro parser.
+* Added macro keybindings.
+* Changed keybindings for "Options -> Enlarge Font" and "Options -> Shrink Font".
+* Simplified file_exit().
+* Added "Tools -> Run Command...".
+* file_exit() now checks all documents for unsaved changes.
+
+----
+
+0.3 -> 0.4
+
+Alpha 1:
+* Added error checking for saving files in file_exit(), opt_options(), and opt_edit_favorites().
+* Options dialog now has smaller tabs/buttons, to allow for more categories.
+* Added "Network" category to the Options dialog.
+* Added "Searching" category to the Options dialog.
+* Moved regex an case sensitivity options into the Searching category in the Options dialog.
+* Changed some of the labels in the Find/Replace dialogs slightly.
+* Added regex search checkboxes to the Find/Replace dialogs.
+* Added search/replace backwards checkboxes to the Find/Replace dialogs.
+* Added "keep dialog open" checkboxes to the Find/Replace dialogs.
+* Changed the text of a couple buttons in the Find/Replace dialogs.
+* Checkboxes in the Find/Replace dialogs are now aligned better.
+* Fixed bug where opening a file from the command line would allow the user to undo the insertion of the text.
+* Changed the configuration system.
+* Added a config option for where in the string the cursor will be positioned when using Find.
+* Added a config option for specifiying whether or not the Find/Replace dialogs should be kept open.
+* Status bar can now be hidden. There was an OptionMenu for it in the Options dialog, but it didn't do anything.
+* Fixed errors caused when status bar or toolbar were disabled. There was no checking to see if they existed when binding events.
+* Entering a negative number in Goto will now go to that many lines from the end.
+* Added "Help -> Report a Problem...".
+* Added a config option for specifiying whether or not the documents should be checked for unsaved changes on exit.
+* Improved the Statistics dialog.
+* Fixed bug in "Tools -> View Bookmarks..." where clicking on a blank part of the listbox would result in an error.
+* Added "Tools -> Tasks...". Also added corrosponding macro command.
+* Added a config option for specifying whether or not the window geometry should be saved on exit.
+* Added file browser.
+* Moved block indenting OptionMenu into Code category.
+* Added automatic comment continuation, and corrosponding config option.
+* Fixed bug where indenting by selecting text wouldn't work for the first line if the starting position was the first character of the line.
+* Added a config option to specify whether the toolbar buttons should use images only, text only, or both text and images.
+* Tearoff menus are now disabled by default.
+* The context menu now works on OSX.
+Alpha 2:
+* Added Unicode support for Python 2.
+* Renamed Save buttons in Options dialog to OK.
+* Added Apply buttons to Options dialog.
+* Fixed bug where disabling automatic indenting would also disable code indenting and comment continuation.
+* Disabling/enabling automatic indenting no longer requires a restart to take effect.
+* Changed how Delete Nonselected works so that the cursor position is kept.
+* Removed bindings on status bar.
+* Renamed the "Edit -> Line Edit" submenu to "Edit -> Line".
+* Fixed bug where context menu would show if the status bar or toolbar was right-clicked.
+* Removed the Options button from the toolbar.
+* Changed some dialogs to be more consistent.
+* Changed Replace Spaces with Tabs and Replace Tabs with Spaces to remember the cursor position, and to only replace if the substrings exist.
+* Fixed bug where clicking Cancel in the Run Command dialog would result in an error.
+* Improved some comments.
+* Added "Code -> Execute". Also added corrosponding macro command.
+* Find and Replace dialogs will no longer close if there is nothing in the entries.
+* Re-arranged some menus.
+* Find, Replace, and Insert Tag dialogs now have labels that are aligned consistently.
+* Added a config option for specifying where in relation to the text the images on the toolbar buttons will be displayed.
+* Labels on the status bar are now sunken.
+* Added "Tools -> Send" submenu.
+* Added a config option for specifying the default email server.
+* Added "Tools -> Send -> Send Via Email...".
+* Added "Code -> Find Opening Symbol".
+* Added "Code -> Find Closing Symbol".
+Alpha 3:
+* Added "Tools -> Send -> Send Via FTP...".
+* Added a config option for specifying the default FTP server.
+* Changed the keybinding for "Search -> Replace..." to the standard Ctrl+H.
+* Added a config option for specifying how Goto will handle negative line numbers.
+* Added a config option for speciying whether or not more advanced options will be shown in the Search menu.
+* Added a config option for specifying whether or not the menu bar should be shown.
+* Added a config option for specifying the default sender for emails.
+* Added a config option for specifying the default recipient for emails.
+* Block indenting is now off by default.
+* Added a category in the Options dialog for configs relating to the file browser.
+* Added a config option for specifying whether the file browser's title should be "File Browser" or the current directory.
+* Added a "browse" macro command for the file browser.
+* Renamed the macro command for deleting files to "delete_file" to avoid a conflict with "delete" for deleting text in the text box.
+* Added some missing documentation to the "macro_docs" file.
+* Added a config option for specifying whether or not the file browser toolbar should be displayed.
+* Added a keybinding for "Tools -> Run Command...". (Ctrl+R)
+* Added macro commands "send_email" and "send_ftp".
+* Added a config option for specifying whether or not the file browser menu bar should be displayed.
+* Added a config option for specifying whether or not the file browser should sort files alphabetically.
+* Added a config option for specifying whether the folders in the file browser should be displayed above or below the files.
+* Added a config option for specifying whether toolbar buttons in the file browser should use images, text, or both.
+* Added a config option for specifying where in relation to the text images on the toolbar buttons in the file browser should be displayed.
+* Added "Tools -> Strip Leading Space" and corrosponding macro command.
+* Added "Tools -> Strip Trailing Space" and corrosponding macro command.
+Alpha 4:
+* Added options category "Menus" for menu-related config options.
+* Fixed bug where the title would have extra spaces when a new file was opened.
+* Added "smart" home key and corrosponding config option.
+* Auto-replace tabs no longer requires a restart to take effect.
+* Fixed bug where disabling auto-replacing tabs would cause pressing the tab key to have no effect.
+* Fixed bug where the "tab" buttons in the Options dialog sometimes wouldn't get the focus visual cue.
+* Moved the menu bar and tearoff config optionmenus into the Menus category.
+* Added a config option for showing or hiding the File menu.
+* Added a config option for showing or hiding the Edit menu.
+* Added a config option for showing or hiding the Documents menu.
+* Added a config option for showing or hiding the Search menu.
+* Added a config option for showing or hiding the Tools menu.
+* Added a config option for showing or hiding the Code menu.
+* Added a config option for showing or hiding the Options menu.
+* Added a config option for showing or hiding the Help menu.
+* Added a config option for showing or hiding the context menu.
+* Added a config option for specifying how much the font size should change when enlarged or shrunk.
+* Fixed bug where enlarging or shrinking the font wouldn't update the line numbers.
+* Fixed bug where some macro commands wouldn't update the title if the text had changed.
+* Unknown macro commands will now cause errors by default.
+* "Code -> Insert XML Prolog" now uses code_insert() instead of its own function.
+* Added a config option for specifying whether the toolbar buttons should use large or small buttons.
+* Added an auto-strip feature and corrosponding config option.
+* Context menu in the file browser now works on OSX.
+* Added a config option for showing or hiding the file browser File menu.
+* Added a config option for showing or hiding the file browser Folders menu.
+* Added a config option for showing or hiding the file browser context menu.
+* "File -> Open From URL..." now uses the urllib module under python 2.
+* Added "Tools -> Pastebin" submenu.
+* Added "Tools -> Pastebin -> Upload to Pastebin...".
+* Added "Tools -> Pastebin -> Download from Pastebin...".
+* Added command bar.
+* Added config option for showing or hiding command bar.
+* Fixed incorrect labels in "Code -> Insert HTML -> *" submenus.
+* Made images on submenus more consistent.
+* Added "Macros" category in the Options dialog for configs relating to macros.
+* Added a config option for specifying whether "Tools -> Run Command..." should run macro commands or Python statements.
+* Added a config option for specifying whether the command bar should run macro commands or Python statements.
+* Added a config option for specifying whether unknown macro commands will cause errors.
+* Added a config option for specifying whether macro execution should stop when an error occurs.
+* Added a config option for specifying whether Python statements are allowed in macros.
+* Added a config option for specifying whether variables are allowed in macros.
+* Added a config option for specifying the string used to start macro comments.
+* Added a config option for specifying the string used to start macro variables.
+* Added a config option for specifying the string used to start macro execution of Python statements.
+* Added "upload_pastebin" and "download_pastebin" macro commands.
+* Added overwrite mode. For some reason Tk's Text widget doesn't already have support for this.
+* Added a label to the status bar for indicating whether the text box was in insert or overwrite mode.
+* Fixed bug where "Search -> Jump to Top" wouldn't work.
+* Fixed bug where "Search -> Jump to Bottom" wouldn't work.
+* Added "Search -> Jump to Selection Start".
+* Added "Search -> Jump to Selection End".
+* Fixed bug where the "Jump to X" menu commands would still see() inconsistently.
+* Added "jump_select_start" and "jump_select_end" macro commands.
+* Fixed bug where clicking on entries in the Options dialog that opened another dialog would still give focus to the entry.
+* Added a config option for specifying whether menus should have icons in them.
+* Clicking on a line in the line numbers will now set the cursor position in the text box to the start of that line.
+* "Ctrl+MouseWheel" now changes the font size.
+* "Alt+MouseWheel" now scrolls by a larger amount.
+* Changed some accelerator labels in menus to be more consistent.
+* Added "docs/keybinding_docs" documentation file.
+* Added "Keybindings" option in the Help dialog.
+Alpha 5:
+* Added "Ctrl+Y" as an alternate keybinding for "Edit -> Redo".
+* "Alt+Up" and "Alt+Down" now scroll up or down by ten lines.
+* Added a config option for specifying whether cut/copy should use the current line if nothing is selected.
+* Windows: fixed bug where the file type in the Open dialog would default to Java files.
+* Windows: fixed bug where "Run Code" wouldn't work. Also simplified command to run.
+* Windows: fixed bug where "Options" window wouldn't get focus.
+* Windows: fixed bug where "About" window wouldn't get focus.
+* Windows: fixed bug where "Edit Favorites" window wouldn't get focus.
+* Windows: fixed bug where "Change Macro Bindings" window wouldn't get focus.
+* Windows: fixed bug where "Help: Macros" window wouldn't get focus.
+* Windows: fixed bug where "Help: Keybindings" window wouldn't get focus.
+* Windows: fixed bug where scrolling wouldn't work in the "Help" dialogs.
+* Changed title of window for "Tools -> Bookmarks -> Open Bookmarks..." to "Open Bookmarks".
+* Changed appearence of buttons in "Change Macro Bindings" window. Also added Cancel button.
+* Changed how "Documents -> Open Document..." works. This fixed bugs where the text box would be cleared, or the wrong file would be closed when cancelled.
+* Added "Ctrl+L" as an alternate keybinding for "Search -> Goto...".
+* Cursor mode can now be saved across sessions.
+* Added a config option for specifying whether or not the cursor mode should be saved.
+Alpha 6:
+* "Tools -> Run Command..." now remembers the last used command.
+* "File -> Edit Favorites..." now shows a dialog if there are no favorites.
+* "Tools -> Bookmarks -> View Bookmarks..." now shows a dialog if there are no bookmarks.
+* "Tools -> Bookmarks -> Open Bookmarks..." now shows a dialog if there are no bookmark files.
+* Fixed bug where double-clicking on a blank part of the listbox in "Tools -> Bookmarks -> Open Bookmarks..." would result in an error.
+* "Tools -> Macros -> Run Macro..." now shows a dialog if there are no macro files.
+* "Tools -> Tasks..." now shows a dialog if there are no tasks.
+* Added a config option for automatically inserting a string at the start of each line.
+* Added a config option for automatically inserting a string at the end of each line.
+* Added a config option for specifying how many lines fast scrolling should scroll by.
+* Fixed bug where fast scrolling would scroll one more line than it should.
+* Right-clicks on status bar labels now show help dialogs.
+* Right-clicks on the line numbers now open the context menu.
+* Added "Search -> Find History..."
+* Added "Search -> Replace History..."
+* Added a config option for specifying if the search and replace history should be shown oldest first or last.
+* Added a config option for specifying whether or not Find will remember the history.
+* Added a config option for specifying whether or not Replace will remember the history.
+* Fixed bug where the status bar would be updated when the file was locked.
+* Status bar labels now update when using the mouse to select text.
+* Added "Edit -> Spacing" submenu.
+* Moved "Strip Trailing Space", "Strip Leading Space", "Replace Tabs With Spaces", and "Replace Spaces With Tabs" into the "Edit -> Spacing" submenu.
+* Status bar is now updated correctly if the file was opened in binary mode.
+* Fixed bug where Find and Replace dialogs wouldn't display when called from macros.
+* Added "Edit -> Spacing -> Normalize".
+* Command bar now uses the UI configs.
+* Command bar is now updated when the UI configs change.
+* Fixed bug where pressing the Escape key would mark the text as having changes.
+* Fixed bug where fast scrolling wouldn't update the status bar.
+* Added keybindings for PageUp and PageDown (scrolls 50 lines by default).
+* Added config option for how many lines PageUp and PageDown should scroll.
+Alpha 7:
+* Fixed bug where configs couldn't be saved if the command bar was enabled.
+* "Remember Search/Replace History" optionmenus now show the correct values.
+* The full/short filename config now works.
+* Added config for specifying whether the history in "Find/Replace History" should be displayed oldest first or last.
+* Added "Edit -> Paste Overwrite".
+* The last encoding is now used when loading a file from the last session.
+* Removed keybinding to a function that didn't exist in the file browser.
+* Fixed bug where the Save button in the "Edit Folders" window wasn't shown.
+* Improved keybinding documentation.
+* Config file now uses an equal sign as a separator between the config name and value.
+* Toolbar buttons now use the "ui_fg" config for setting the color of the text.
+* Any keybinding that used right-clicks can now use Ctrl+left-click.
+* Scroll events now work on Windows.
+* Merged the help_help_*() functions into one.
+* Added documentation file "docs/configuration_docs" and an option to display it in the Help dialog.
+* Added "underline", "bold italic", "underline italic", "underline bold", and "underline bold italic" options for the font style config.
+* Added "smart" End key, as well as a config option for enabling or disabling it.
+* Keybindings using Shift as a modifier now work correctly on Linux.
+* Fixed bug where toolbar buttons sometimes wouldn't work.
+* Added a config option for specifying whether "Duplicate Line" should position the duplicated line above or below the current line.
+* Added "File -> Open with Encoding" submenu.
+* Added "File -> Save with Encoding" submenu.
+* Added "File -> Reload with Encoding" submenu.
+* Added "File -> Binary Mode" submenu.
+* Added "File -> Binary Mode -> Open in Binary Mode...".
+* Added "File -> Binary Mode -> Reload in Binary Mode...".
+* Added "File -> Binary Mode -> Save in Binary Mode...".
+* Restoring a file will no longer use the last encoding if it was opened in binary mode.
+* Added "open_binary", "reload_binary", and "save_binary" macro commands.
+Alpha 8:
+* Added help buttons in the "Upload to Pastebin" dialog.
+* Added a documents list sidebar, as well as two config options for hiding or showing it and specifying the width.
+* Fixed bug where clicking on a blank part of the line numbers would cause an error.
+* Fixed bug where the selection wouldn't get restored when switching between documents.
+* Fixed bug where the exit dialog would add one to the number of documents with unsaved changes when the current document had changes.
+* Added "Tools -> Encode URL".
+* Added "Tools -> Decode URL".
+* Added "encode_url" and "decode_url" macro commands.
+* Added "Options -> Edit File Types...".
+* Added macro commands for items in the Options menu.
+* Added macro commands for items in the Help menu.
+* Changed the "F1" keybinding from About to Help.
+* Added collaborative editing ("Tools -> Collaborative Editing...").
+* Added config options for specifying the default server and port for collaborative editing.
+* Improved the server.
+* Added documentation file "docs/collab_docs" and an option to display it in the Help dialog.
+* Added "collab" macro command.
+* Moved "docs" folder into "resources".
+* Improved "Statistics" dialog UI.
+* Improved statistics shown about the selected text.
+* Added automatic line wrapping, as well as two config options for enabling or disabling it and specifying where it should wrap.
+* Improved some of the dialogs slightly (mostly adding padding).
+* Fixed bug where "Code -> Run Code" and "Code -> Compile" wouldn't work when called from a macro.
+* Added a config option for specifying whether "Run Code" and "Compile" should prompt for command line arguments.
+* Created a new "About" window.
+* Loading a file from the command line now appends the filename to the recent open list.
+* Fixed error in Help dialogs.
+* Added "Ctrl+Tab" as an alternate keybinding for "Documents -> Next" and "Shift+Ctrl+Tab" for "Documents -> Previous".
+* Simplified loading of the configuration file.
+* Fixed bug were "Edit -> Selection -> Select..." and related commands wouldn't work at all.
+* Fixed bug where "Edit -> Selection -> Select Before Insert" and "Edit -> Selection -> Select After Insert" wouldn't work if there was already text selected.
+* Renamed "Edit -> Selection -> Select Before Insert" to "Select All Before Insert" and "Edit -> Selection -> Select After Insert" to "Select All After Insert".
+* Added "Edit -> Selection - > Select Line Before Insert" and "Edit -> Selection -> Select Line After Insert".
+* Added macro commands "sel_line_before" and "sel_line_after".
+* Fixed bug where "Search -> Search Selected -> *" wouldn't work correctly if there were anything other than alphanumeric characters in the search string (due to the string not being encoded).
+* The "Options" dialog can no longer be sized. This caused problems with packing the widgets.
+* Changed some dialog titles to be more consistant.
+* "Search -> Jump to Selection Start" and "Search -> Jump to Selection End" now show errors if there is no text selected, instead of failing silently.
+* "Search -> Jump to Top" and "Search -> Jump to Bottom" now de-select any currently selected text.
+* Added "Search -> Jump to Line Start" and "Search -> Jump to Line End".
+* Added macro commands "jump_line_start" and "jump_line_end".
+* The "Find", "Replace", "Change Macro Bindings", "Collaborative Editing", "Upload to Pastebin", "Send via FTP", "Send via Email", "Statistics", "Insert Tag", and "About" windows can no longer be resized.
+* The help dialogs now use Arial as the font, instead of the default monospace font. (It was rather difficult to read.)
+* The font style used in the line numbers is now always "normal", no matter what it is for the main text box.
+* The help dialogs now use tags to format the section titles, which makes the documentation much easier to read.
+* Fixed bug where "Code -> Insert Tag..." wouldn't insert anything if the dialog was left blank.
+* Improved "Code -> Insert Code..." to set the cursor inside the comment, if it's a two sided comment.
+Final:
+* Added a dialog that appears when the application is run for the first time, with some basic information.
+* Added code to check if a file exists when loading from a command line.
+* If the file edited last session no longer exists, it will no longer try to re-open the file but will instead open a new file. This caused a problem where the application wouldn't start if the file had been deleted or moved since then.
+* Added error checking for "Tools -> Insert Color...".
+* Added "Tools -> Insert -> More Times" submenu.
+* Added "Tools -> Insert -> More Dates" submenu.
+* Simplified edit_copy_clipboard().
+* Added help buttons to "Send via FTP" and "Send via Email".
+* The current line now has a light background, to give an indication where the cursor is.
+* Added two config options for specifying whether the current line should be highlighted and what color should be used.
+* Renamed "Search -> Search Selected" to "Search -> Web Search".
+* Added several items to the "Search -> Web Search" menu, as well as the corrosponding macro parameters.
+* Fixed bug where the cursor would move out of view when text inserted using a menu command was longer than the width of the text box. (This only appeared when text wrap was off.)
+* Removed a few keybindings that contradicted each other (there were two "Ctrl+H" keybindings, for example. One for "Find -> Replace...", and one for something that wasn't even in the menu any more).
+* Added keybindings "Shift+Ctrl+F" for "Search -> Find Selected..." and "Shift+Ctrl+H" for "Search -> Replace Selected...".
+* Added keybindings "Ctrl+W" for "Search -> Find History..." and "Shift+Ctrl+W" for "Search -> Replace History...".
+* Added keybindings "Ctrl+J" for "Tools -> Notes..." and "Shift+Ctrl+J" for "Tools -> Tasks...".
+* Added keybinding "Ctrl+E" for "Tools -> Collaborative Editing...".
+* Added keybindings "Ctrl+U" for "Tools -> Pastebin -> Upload to Pastebin..." and "Shift+Ctrl+U" for "Tools -> Pastebin -> Download from Pastebin...".
+* Added keybinding "Ctrl+F1" for "Help -> About...".
+* Slightly renamed a few items in the "Code" menu.
+* The file no longer has to be saved for "Code -> Execute...".
+* "Code -> Execute..." now uses the "run_code_args" config option, for specifying whether the user will be prompted for command line arguments.
+* Improved some error messages.
+* Added a close button to the toolbar.
+* Changed the selection background to a darker color.
+* "Tools -> Pastebin -> Upload to Pastebin..." now saves the last values.
+* "Tools -> Pastebin -> Download from Pastebin..." now saves the last value.
+* Added "Tools -> PasteHTML -> Upload to PasteHTML..." and corrosponding macro command.
+* Added a images for several menu items.
+* Changed a few images in the menus.
+* "Search -> Find History..." and "Search -> Replace History..." now save across sessions.
+* Fixed bug where "Search -> Replace History..." wouldn't work at all. (Wrong variable name, oops.)
+* Fixed bug where "Search -> Replace..." would delete the previous character or selected text if the "Ctrl+H" keybinding was used.
+* When loading the data files the try-except blocks now explicitly specify they should catch IOErrors.
+* Added "Options -> Clear Find History..." and "Options -> Clear Replace History...".
+* Added macro commands "clear_find" and "clear_replace".
+* Added more items to the context menu.
+* Added keybinding "Ctrl+R" for "Tools -> Macros -> Run...". "Tools -> Run Command..." now uses "Shift+Ctrl+R".
+* Pressing Esc in "File -> Favorites...", "File -> Browse...", "Documents -> View All...", "Search -> Find History...", "Search -> Replace History...", "Tools -> Bookmarks -> View Bookmarks...", "Tools -> Bookmarks -> Open Bookmarks...", "Tools -> Macros -> Run Macro...", "Tools -> Notes...", "Tools -> Tasks...", "Tools -> Statistics...", "Options -> Options...", "Options -> Edit Favorites...", "Tools -> Edit File Types...", "Help -> About...", and the Help dialogs will now close the window.
+* Fixed typos in dialogs and documentation. Oops.
+* Added icons to the menus in the file browser.
+* Added keybindings "F4" for "File -> Browse...", "F10" for "File -> Rename...", and "F11" for "File -> Delete...".
+* Improved the "Info" dialog in the file browser.
+* Added more keybindings to the file browser.
+* Improved comments.
+* Improved help dialogs in the "Options" window.
+* Added "Edit -> Paste Indent".
+* "File -> Recently Opened -> Clear List" now clears the menu.
+* When loading a file from the command line or when restoring from the last session it now appends the full file name to the list of recently opened files.
+* Added keybinding "Alt+Ctrl+S" for "File -> Save Copy...".
+* "Ctrl+1" through "Ctrl+0" can now be used to switch between tabs in the "Options" dialog.
+* In the "Options" dialog "Ctrl+S" can now be used to save the options and "Shift+Ctrl+S" can save the options without closing the dialog.
+* Added a section in "docs/keybinding_docs" for the "Options" dialog.
+* Added "Code -> Run Code (Other)".
+* Added macro commands "run_other" and "paste_indent".
+* Fixed miscellaneous bugs with the collaborative editing.
+* Fixed bug where clicking "Cancel" in "File -> Reload With Encoding -> Other..." would still continue to the "Open" function.
+* Fixed bug where pressing Insert would still do the default action.
+* Fixed bug where the status bar wouldn't be updated when the cursor mode changed.

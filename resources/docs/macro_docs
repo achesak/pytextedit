@@ -1,0 +1,173 @@
+About Macros
+
+Macros allow the user to quickly do repetitive tasks without needing to perform every action. There are many macro commands, in addition to comments to allow documentation of the macro.
+
+Commands
+
+* out string - Prints string to standard output.
+* show_info string - Shows string in an info dialog.
+* show_warn string - Shows string in a warning dialog.
+* show_err string - Shows string in an error dialog.
+* set_insert location - Moves the cursor position to location.
+* insert location string - Inserts string at position location.
+* insert_nl location number - Inserts newlines at location. The amount of newlines is specified by number.
+* delete location1 location2 - Deletes all text from location1 to location2.
+* new - Opens a new file.
+* open filename - Opens filename.
+* open_url url - Opens url.
+* reload - Reloads the file.
+* save - Saves the file.
+* save_as filename - Saves the file as filename.
+* save_copy filename - Saves a copy of the file as filename.
+* revert_save - Reverts to the last save.
+* open_binary filename - Opens filename in binary mode.
+* reload_binary - Reloads the file in binary mode.
+* save_binary - Saves the file in binary mode.
+* insert_file filename - Inserts the text of the file filename into the current file.
+* delete_file - Deletes the current file.
+* rename filename - Renames the current file to filename.
+* browse - Shows the file browser.
+* print - Prints the file.
+* exit - Exits pytextedit.
+* undo - Undos the last action.
+* redo - Redos the last undo.
+* cut - Cuts the selected text.
+* copy - Copies the selected text.
+* paste - Pastes the text on the clipboard.
+* paste_overwrite - Pastes the text on the clipboard, overwriting any existing text.
+* paste_indent - Pastes the text on the clipboard after indenting it.
+* clear_clip - Clears the clipboard.
+* copy_path - Copies the full path of the file.
+* copy_file - Copies the filename.
+* copy_dir - Copies the directory that the file is in.
+* lock - Locks the document.
+* unlock - Unlocks the document.
+* case_lower - Converts the selected text to lowercase.
+* case_upper - Converts the selected text to uppercase.
+* case_cap - Capitalizes the selected text.
+* case_rev - Reverses the case of the selected text.
+* join_lines - Joins the selected lines.
+* copy_line - Copies the current line.
+* cut_line - Cuts the current line.
+* rev_line - Reverses the current line.
+* dup_line - Duplicates the current line.
+* del_line - Deletes the current line.
+* normalize - Normalizes the spacing.
+* strip_leading - Strips leading spaces from the text.
+* strip_trailing - Strips trailing spaces from the text.
+* replace_ts - Replaces spaces with tabs.
+* replace_st - Replaces tabs with spaces.
+* sel_all - Selects all text.
+* desel_all - Deselects all text.
+* sel_from location1 location2 - Selects text from location1 to location2.
+* sel_before - Selects all text before the cursor.
+* sel_after - Selects all text after the cursor.
+* sel_line_before - Selects the current line before the cursor.
+* sel_line_after - Selects the current line after the cursor.
+* del_sel - Deletes selected text.
+* del_nonsel - Deletes non-selected text.
+* new_doc - Opens a new document.
+* open_doc filename - Opens a new document with file filename.
+* close_doc - Closes the current document.
+* prev_doc - Switches to the previous document.
+* next_doc - Switches to the next document.
+* find string - Finds string.
+* find_sel - Finds the next occurrence of the selected text.
+* find_in_sel string - Finds string in the selected text.
+* goto line - Goes to line.
+* replace string1 ||| string2 - Replaces string1 with string2.
+* replace_sel string2 - Replaces the selected text with string2.
+* replace_in_sel string1 ||| string2 - Replaces string1 with string2 in the selected text.
+* find_history - Shows the Find history.
+* replace_history - Shows the Replace history.
+* jump_top - Jumps to the top of the document.
+* jump_bottom - Jumps to the bottom of the document.
+* jump_insert - Jumps to the cursor.
+* jump_select_start - Jumps to the start of the selected text.
+* jump_select_end - Jumps to the end of the selected text.
+* jump_line_start - Jumps to the start of the line.
+* jump_line_end - Jumps to the end of the line.
+* open_url_wb - Opens the selected URL in a web browser.
+* search_site site - Searches for the selected text on site. Valid values for site are "google", "yahoo", "duckduckgo", "bing", "wikipedia", "wiktionary", "wikidata", "wikisource", "aboutcom", "youtube", "wolframalpha", "idgdshorten", and "isgdlookup".
+* add_bookmark - Adds a bookmark on the current line.
+* view_bookmarks - Shows a list with all bookmarks.
+* clear_bookmarks - Clears the list of bookmarks.
+* save_bookmarks - Saves the bookmarks to a file.
+* open_bookmarks - Opens a list of bookmarks from a file.
+* insert_time - Inserts the time.
+* insert_time_words - Inserts the time, in word form.
+* insert_date - Inserts the date.
+* insert_color - Inserts a color.
+* insert_line - Inserts the line number.
+* insert_pos - Inserts the cursor position.
+* insert_path - Inserts the full file path.
+* insert_filename - Inserts the filename.
+* insert_dir - Inserts the directory that the file is in.
+* indent - Indents the text.
+* unindent - Unindents the text.
+* encode_url - URL encodes the selected text.
+* decode_url - URL decodes the selected text.
+* tasks - Shows the tasks.
+* notes - Shows the notes.
+* collab - Starts collaborative editing.
+* upload_pastebin - Uploads the text to Pastebin.
+* download_pastebin - Downloads from Pastebin.
+* upload_pastehtml - Uploads the text to PasteHTML.
+* send_email - Sends email.
+* send_ftp - Sends the file via FTP.
+* statistics - Shows statistics about the file.
+* open_web - Opens the file in a web browser.
+* run_python args - Runs the file in the Python interpreter, with the optional arguments args.
+* run_perl args - Runs the file in the Perl interpreter, with the optional arguments args.
+* run_php args - Runs the file in the PHP interpreter, with the optional arguments args.
+* compile_c args - Compiles using a C compiler, with the optional arguments args.
+* compile_cpp args - Compiles using a C++ compiler, with the optional arguments args.
+* compile_java args - Compiles using a Java compiler, with the optional arguments args.
+* run_other args - Runs any command, with the optional arguments args.
+* escape - Escapes the selected text.
+* remove_tags - Removes tags from the selected text.
+* options - Shows the Options dialog.
+* revert_options - Reverts to default options.
+* enlarge_font - Increases the font size.
+* shrink_font - Decreases the font size.
+* edit_favorites - Edits the favorites list.
+* edit_filetypes - Edits the file types list.
+* clear_find - Clears the Find history.
+* clear_replace - Clears the Replace history.
+* about - Shows the About dialog.
+* help - Shows help.
+
+All commands are case-sensitive. It is also important to note that spacing is very strict. Commands must start on the first character of each line, and each parameter must be separated with a single space (with the exceptions of replace and replace_in_sel, which use " ||| " as separators). No space is allowed directly before the end of a line, and blank lines cannot contain any spaces. Comments, however, are mostly free of these rules, and after the initial "#" any character is allowed.
+
+Comments
+
+Lines started with "#" will be treated as comments, and will be ignored by the interpreter.
+
+Flags
+
+Flags allow for changing the behavior of the parser. Flags must be on the first line of the macro.
+
+* !suppress_dlg - Suppresses the macro completion dialog.
+* !more_dlg - Shows more information in the macro completion dialog.
+
+Python Code
+
+Starting a line with "~ " will pass the rest of the line to Python's exec statement/function, allowing execution of Python code.
+
+Variables
+
+Variables are defined by placing a dollar sign ("$") in front of the variable name, then placing the value. after a space, equal sign, and another space.
+
+EXAMPLE:
+$test = hello world
+
+Variables can contain any letter or number, and are case-sensitive. It is not, however, recommended to have variables like "$test" and "$test2", where the second is the same name as the first with the addition of a number, as this causes problems. (This should be fixed soon!)
+
+Using variables is just as simple; insert the variable name where you wish the value to go.
+
+EXAMPLE:
+insert end $test.
+
+Keybindings
+
+Keybindings allow macros to be run quickly without having to choose the name from the "Tools -> Macros -> Run..." listbox. Macros can be bound to Ctrl+Shift+1 through 0. To do this, select the menu item "Tools -> Macros -> Change Bindings...", and then enter the macro's name in the text box next to the desired binding.

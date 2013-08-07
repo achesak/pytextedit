@@ -1,0 +1,11 @@
+All Files=*
+Text Files=.txt
+Python Files=.py .pyw
+HTML Files=.html .htm
+XML Files=.xml
+CSS Files=.css
+Perl Files=.pl
+PHP Files=.php
+JavaScript Files=.js .json
+C/C++ Files=.c .cpp
+Java Files=.java

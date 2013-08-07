@@ -1,0 +1,136 @@
+About Keybindings
+
+Keybindings allow the user to quickly perform actions without needing to choose them from the menus.
+
+Menu Keybindings
+
+File menu:
+     Ctrl+N - New
+     Ctrl+O - Open
+     Ctrl+[Space] - Quick Open
+     F5 - Reload
+     Ctrl+Alt+[Space] - Favorites
+     Ctrl+S - Save
+     Shift+Ctrl+S - Save As
+     Alt+Ctrl+S - Save Copy
+     F4 - Browse
+     F10 - Rename
+     F11 - Delete
+     Ctrl+P - Print
+     Ctrl+Q - Exit
+
+Edit menu:
+     Ctrl+Z - Undo
+     Shift+Ctrl+Z, Ctrl+Y - Redo
+     Ctrl+X - Cut
+     Ctrl+C - Copy
+     Ctrl+V - Paste
+     Shift+Ctrl+V - Paste Overwrite
+     Alt+Ctrl+V - Paste Indent
+     Ctrl+A - Select All
+     Shift+Ctrl+A - Deselect All
+
+Documents menu:
+     Shift+Ctrl+N - New Document
+     Shift+Ctrl+O - Open Document
+     Shift+Ctrl+Q - Close Document
+     Alt+LeftArrow, Shift+Ctrl+Tab - Previous
+     Alt+RightArrow, Ctrl+Tab - Next
+     Ctrl+M - View All
+
+Search menu:
+     Ctrl+F - Find
+     Shift+Ctrl+F - Find Selected
+     Ctrl+H - Replace
+     Shift+Ctrl+H - Replace Selected
+     Ctrl+W - Find History
+     Shift+Ctrl+W - Replace History
+     Ctrl+G, Ctrl+L - Goto
+     F6 - Jump to Top
+     F7 - Jump to Bottom
+     F8 - Jump to Insert
+
+Tools menu:
+     Ctrl+B - Add Bookmark
+     Shift+Ctrl+B - View Bookmarks
+     Ctrl+R - Run Macro
+     Shift+Ctrl+R - Run Command
+     Shift+Ctrl+T - Insert Time
+     Shift+Ctrl+D - Insert Date
+     Ctrl+I - Indent
+     Shift+Ctrl+I - Unindent
+     Ctrl+J - Notes
+     Shift+Ctrl+J - Tasks
+     Ctrl+E - Collaborative Editing
+     Ctrl+U - Upload to Pastebin
+     Shift+Ctrl+U - Download from Pastebin
+     F2 - Statistics
+
+Options menu:
+     F3 - Options
+     Ctrl+UpArrow - Enlarge Font
+     Ctrl+DownArrow - Shrink Font
+
+Help menu:
+     Ctrl+F1 - About
+     F1 - Help
+
+Other Keybindings
+
+There are other keybindings not listed in the menus:
+
+* RightClick - Show context menu
+* Ctrl+MouseWheelUp - Enlarge font
+* Ctrl+MouseWheelDown - Shrink font
+* Alt+MouseWheelUp - Scroll up ten lines
+* Alt+MouseWheelDown - Scroll down ten lines
+* Alt+UpArrow - Scroll up ten lines
+* Alt+DownArrow - Scroll down ten lines
+* Alt+Return - Toggle between text box and command bar
+* MiddleClick - Paste
+* MiddleClick on toolbar buttons - Shows help about the button
+* Home - "Smart" home key, if enabled
+* Escape - Close most dialogs
+
+File Browser Keybindings
+
+File menu:
+     Ctrl+N - Create Directory
+     Shift+Ctrl+N - Create New File
+     F2 - Rename
+     F3, Delete - Delete
+     Alt+Return - Info
+     Ctrl+O - Goto
+     F5 - Refresh
+     Ctrl+Q - Exit
+
+Folders menu:
+     Ctrl+E - Edit Folders
+
+Other keybindings:
+
+* RightClick - Show context menu
+* Alt+Left, Backspace - Move back
+* Alt+Up - Move up
+* DoubleClick - Open file or directory
+* Return (in files list) - Open file or directory
+* Return (in address bar) - Go to directory
+
+Options Dialog Keybindings
+
+* Ctrl+S - Save the options and close the window
+* Shift+Ctrl+S - Save the options without closing the window
+* Ctrl+1 - Switch to the Font tab
+* Ctrl+2 - Switch to the Interface tab
+* Ctrl+3 - Switch to the Editing tab
+* Ctrl+4 - Switch to the Searching tab
+* Ctrl+5 - Switch to the Network tab
+* Ctrl+6 - Switch to the File Browser tab
+* Ctrl+7 - Switch to the Menus tab
+* Ctrl+8 - Switch to the Macros tab
+* Ctrl+9 - Switch to the Code tab
+* Ctrl+0 - Switch to the Misc tab
+
+Macro Keybindings
+
+Macros can also be bound to Ctrl+1 through Ctrl+0 by going to "Tools -> Macros -> Change Bindings..." and entering the name of the macro next to the keybinding.

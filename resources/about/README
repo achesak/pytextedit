@@ -1,0 +1,5 @@
+pytextedit is a simple text editor written in Python with Tk for the GUI.
+
+pytextedit requires the Python interpreter and Tk to run. To start, type "python pytextedit.py" into a terminal or command prompt. If you have both Python 2 and Python 3 installed, use the "python3" command instead. Additionally, files can be opened directly from the command line: "python pytextedit.py [filename]". Windows users also double-click "pytextedit.py" to run the application.
+
+pytextedit is released under the MIT open source license (http://opensource.org/licenses/mit-license.php). Please see the LICENSE file for more information.
